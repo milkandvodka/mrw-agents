@@ -1,0 +1,7 @@
+-r requirements.txt
+pytest
+httpx
+# only needed to rebuild qbank/data/bank.json with python -m qbank.prepare_data
+pandas
+pyarrow
+requests

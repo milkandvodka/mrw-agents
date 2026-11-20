@@ -1,0 +1,79 @@
+[
+ {
+  "type": "key_conflict",
+  "ids": [
+   "PH-06536",
+   "PH-03468"
+  ],
+  "topic": "Unspecified"
+ },
+ {
+  "type": "key_conflict",
+  "ids": [
+   "PH-12711",
+   "PH-09802"
+  ],
+  "topic": "Unspecified"
+ },
+ {
+  "type": "duplicate_options",
+  "ids": [
+   "PH-02426"
+  ],
+  "topic": "Chemotherapy"
+ },
+ {
+  "type": "duplicate_options",
+  "ids": [
+   "PH-12149"
+  ],
+  "topic": "Hypolipidemic"
+ },
+ {
+  "type": "blank_option",
+  "ids": [
+   "PH-11995"
+  ],
+  "topic": "Unspecified"
+ },
+ {
+  "type": "explanation_conflict",
+  "ids": [
+   "PH-01384"
+  ],
+  "topic": "Autonomic nervous system",
+  "original": 1
+ },
+ {
+  "type": "explanation_conflict",
+  "ids": [
+   "PH-12372"
+  ],
+  "topic": "Autonomic nervous system",
+  "original": 1
+ },
+ {
+  "type": "ai_only_wrong_key",
+  "ids": [
+   "PH-10446"
+  ],
+  "topic": "Autonomic nervous system",
+  "original": 1
+ },
+ {
+  "type": "ai_only_wrong_key",
+  "ids": [
+   "PH-01620"
+  ],
+  "topic": "Autonomic nervous system",
+  "original": 0
+ },
+ {
+  "type": "ai_only_wrong_key",
+  "ids": [
+   "PH-12995"
+  ],
+  "topic": "Autonomic nervous system",
+  "original": 1
+ }
+]

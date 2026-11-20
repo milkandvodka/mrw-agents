@@ -1,0 +1,12 @@
+.venv
+.env
+.git
+.superpowers
+**/__pycache__
+.pytest_cache
+frontend/node_modules
+frontend/dist
+**/tests
+**/evals
+test_app.py
+mentor/data/mentor.db

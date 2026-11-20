@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0f2a30;
+  --color-body: #1e3238;
+  --color-muted: #5e7378;
+  --color-faint: #8fa2a6;
+  --color-line: #e2ebed;
+  --color-canvas: #f4f8f9;
+
+  --color-brand-50: #eaf7fa;
+  --color-brand-100: #d3eff5;
+  --color-brand-300: #8ad6e7;
+  --color-brand-400: #62c8df;
+  --color-brand-500: #2fa9c4;
+  --color-brand-600: #1689a3;
+  --color-brand-700: #0e6f86;
+  --color-brand-800: #0d5567;
+
+  --color-ok-50: #ecf7ef;
+  --color-ok-200: #bfe3c9;
+  --color-ok-700: #23784a;
+  --color-bad-50: #fdedec;
+  --color-bad-200: #f4c5c1;
+  --color-bad-700: #b4372f;
+  --color-warn-50: #fef5e2;
+  --color-warn-200: #f6dea6;
+  --color-warn-700: #8f5b06;
+}
+
+/* QBank Auditor wears the teal defaults above; Mentor Desk swaps in indigo for everything inside it */
+.theme-mentor {
+  --color-ink: #161a2e;
+  --color-body: #2a2f45;
+  --color-muted: #636a80;
+  --color-faint: #9aa0b2;
+  --color-line: #e6e8ef;
+  --color-canvas: #f6f7fa;
+
+  --color-brand-50: #eef0fb;
+  --color-brand-100: #dde1f7;
+  --color-brand-300: #a5aeea;
+  --color-brand-400: #8390e0;
+  --color-brand-500: #5e6bd3;
+  --color-brand-600: #4652bd;
+  --color-brand-700: #3a43a0;
+  --color-brand-800: #2f3680;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3 h-8 text-[13px] font-semibold transition outline-none focus-visible:ring-4 focus-visible:ring-brand-100 disabled:opacity-50 disabled:pointer-events-none;
+}
+@utility btn-primary {
+  @apply btn bg-brand-700 text-white hover:bg-brand-800;
+}
+@utility btn-ghost {
+  @apply btn text-body hover:bg-canvas border border-line bg-white;
+}
+@utility btn-quiet {
+  @apply btn text-muted hover:text-ink hover:bg-canvas;
+}
+@utility chip {
+  @apply inline-flex items-center gap-1.5 rounded-full h-7 px-3 text-[12.5px] font-semibold border transition outline-none focus-visible:ring-4 focus-visible:ring-brand-100;
+}
+@utility kbd {
+  @apply inline-grid place-items-center min-w-5 h-5 px-1 rounded border border-line bg-white text-[10.5px] font-semibold text-body;
+}
+
+/* Rendered agent answers */
+.md {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-body);
+}
+.md > * + * { margin-top: 0.6em; }
+.md strong { font-weight: 650; color: var(--color-ink); }
+.md ul, .md ol { padding-left: 1.2em; }
+.md ul { list-style: disc; }
+.md ol { list-style: decimal; }
+.md li + li { margin-top: 0.3em; }
+.md li::marker { color: var(--color-faint); }
+.md h1, .md h2, .md h3, .md h4 { font-weight: 700; color: var(--color-ink); font-size: 1em; margin-top: 1em; }
+.md code { font-size: 0.88em; background: var(--color-canvas); border: 1px solid var(--color-line); border-radius: 5px; padding: 0.05em 0.35em; }
+.md table { border-collapse: collapse; font-size: 13px; }
+.md th, .md td { border: 1px solid var(--color-line); padding: 0.3em 0.6em; text-align: left; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.animate-rise { animation: rise 0.35s ease-out both; }
+
+/* replays whenever an agent is switched to, since it comes back from display: none */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade { animation: fade 0.22s ease-out both; }
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.25; }
+  40% { opacity: 1; }
+}
+.dots span { animation: blink 1.2s infinite both; }
+.dots span:nth-child(2) { animation-delay: 0.15s; }
+.dots span:nth-child(3) { animation-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

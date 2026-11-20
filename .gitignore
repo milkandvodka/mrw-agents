@@ -1,0 +1,13 @@
+.venv/
+# secrets: every .env file at any depth, except the template
+.env
+.env.*
+!.env.example
+__pycache__/
+.pytest_cache/
+.superpowers/
+frontend/node_modules/
+frontend/dist/
+mentor/data/mentor.db
+# raw eval transcripts stay local (the QBank chat runs may quote copyrighted web questions)
+*/evals/results/

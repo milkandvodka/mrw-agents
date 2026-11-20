@@ -1,0 +1,77 @@
+[
+ {
+  "student_id": "S017",
+  "story": "dropout",
+  "truth": "Was active almost daily, then stopped completely 23 days ago; missed Grand Test 5."
+ },
+ {
+  "student_id": "S042",
+  "story": "lecture skipper",
+  "truth": "Never watched a Pharmacology lecture and scores far below the batch in Pharmacology."
+ },
+ {
+  "student_id": "S063",
+  "story": "partial watcher",
+  "truth": "Starts most lectures but watches only about a quarter of each."
+ },
+ {
+  "student_id": "S088",
+  "story": "out of order",
+  "truth": "Watches each subject's lectures last-to-first."
+ },
+ {
+  "student_id": "S105",
+  "story": "copier",
+  "truth": "Copied S131's answers in Grand Test 3; the review confirmed it."
+ },
+ {
+  "student_id": "S131",
+  "story": "copy source",
+  "truth": "Their answers were copied in Grand Test 3; the review cleared them."
+ },
+ {
+  "student_id": "S150",
+  "story": "open speed flag",
+  "truth": "Finished Grand Test 5 in 21 of 120 minutes with a near-top score and 17 tab switches; review open."
+ },
+ {
+  "student_id": "S177",
+  "story": "cleared flag",
+  "truth": "Flagged for tab switches in Grand Test 2; cleared (power cut, rejoined from phone)."
+ },
+ {
+  "student_id": "S199",
+  "story": "improver",
+  "truth": "Grand test rank has climbed steadily from the bottom third to the top."
+ },
+ {
+  "student_id": "S222",
+  "story": "decliner",
+  "truth": "Grand test rank and daily app time have both fallen steadily."
+ },
+ {
+  "student_id": "S240",
+  "story": "name twin",
+  "truth": "Shares the name Priya Sharma with S261 (another batch)."
+ },
+ {
+  "student_id": "S261",
+  "story": "name twin",
+  "truth": "Shares the name Priya Sharma with S240 (another batch)."
+ },
+ {
+  "student_id": "S288",
+  "story": "new joiner",
+  "truth": "Joined 4 days ago: two lectures, no tests yet."
+ },
+ {
+  "student_id": "S011",
+  "story": "one weak subject",
+  "truth": "Among the batch's best overall, but weak in Microbiology."
+ },
+ {
+  "student_id": "S275",
+  "story": "never tests",
+  "truth": "Watches nearly every lecture in full but has never taken a test."
+ }
+]
