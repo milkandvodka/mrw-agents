@@ -1,10 +1,11 @@
-import { ExternalLink } from "lucide-react";
+import { CodeXml, ExternalLink } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AgentBar } from "./AgentBar";
 import type { AgentKey } from "./AgentBar";
 
 // LeakTrace runs as its own service; this tab shows it in a frame. Its address comes from the server's settings,
 // and the frame only loads once the tab is first opened.
+const CODE = "https://github.com/milkandvodka/leaktrace";
 export default function LeakTrace({ active, onSwitch }: { active: boolean; onSwitch: (a: AgentKey) => void }) {
   const [url, setUrl] = useState<string | null>(null);
   const [opened, setOpened] = useState(active);
@@ -15,7 +16,10 @@ export default function LeakTrace({ active, onSwitch }: { active: boolean; onSwi
   return (
     <div className="h-full flex flex-col">
       <AgentBar agent="leaktrace" onSwitch={onSwitch}
-        right={url ? <a className="btn-quiet h-9 px-2 text-[13.5px]" href={url} target="_blank" rel="noreferrer"><ExternalLink size={15} /> <span className="hidden sm:inline">Open in a new tab</span></a> : undefined} />
+        right={<div className="flex items-center gap-1">
+          <a className="btn-quiet h-9 px-2 text-[13.5px]" href={CODE} target="_blank" rel="noreferrer"><CodeXml size={15} /> <span className="hidden sm:inline">Code on GitHub</span></a>
+          {url && <a className="btn-quiet h-9 px-2 text-[13.5px]" href={url} target="_blank" rel="noreferrer"><ExternalLink size={15} /> <span className="hidden sm:inline">Open in a new tab</span></a>}
+        </div>} />
       {url === null ? null : url ? (
         opened && <iframe title="LeakTrace" src={url} className="flex-1 w-full border-0 bg-white" allow="fullscreen" />
       ) : (
