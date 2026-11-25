@@ -1,13 +1,14 @@
-import { ArrowLeft, ClipboardCheck, GraduationCap } from "lucide-react";
+import { ArrowLeft, ClipboardCheck, Fingerprint, GraduationCap } from "lucide-react";
 import type { ReactNode } from "react";
 
-export type AgentKey = "qbank" | "mentor";
+export type AgentKey = "qbank" | "mentor" | "leaktrace";
 
 // Each agent keeps its own colour in the switch, whichever palette the page around it is wearing.
-const TEAL = "#0e6f86", INDIGO = "#3a43a0";
+const TEAL = "#0e6f86", INDIGO = "#3a43a0", ROSE = "#b42346";
 const AGENTS = [ // the switch's order, left to right; the first is the one the site opens on
   { key: "mentor", name: "Mentor Desk", short: "Mentor", Icon: GraduationCap, color: INDIGO },
   { key: "qbank", name: "QBank Auditor", short: "QBank", Icon: ClipboardCheck, color: TEAL },
+  { key: "leaktrace", name: "LeakTrace", short: "Leaks", Icon: Fingerprint, color: ROSE },
 ] as const;
 
 export function Mark({ size = 22 }: { size?: number }) {

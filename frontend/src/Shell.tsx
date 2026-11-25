@@ -1,9 +1,11 @@
 import { useState } from "react";
 import type { AgentKey } from "./AgentBar";
 import MentorDesk from "./mentor/App";
+import LeakTrace from "./LeakTrace";
 import QBankAuditor from "./qbank/App";
 
-const fromHash = (): AgentKey => (location.hash === "#qbank" ? "qbank" : "mentor"); // Mentor Desk is the default
+const fromHash = (): AgentKey => // Mentor Desk is the default
+  location.hash === "#qbank" ? "qbank" : location.hash === "#leaktrace" ? "leaktrace" : "mentor";
 
 // Both agents stay mounted, so an answer still streaming in one is waiting when you switch back.
 export default function Shell() {
@@ -19,6 +21,9 @@ export default function Shell() {
       </div>
       <div className="h-full theme-mentor bg-canvas" hidden={agent !== "mentor"}>
         <MentorDesk active={agent === "mentor"} onSwitch={pick} />
+      </div>
+      <div className="h-full bg-canvas" hidden={agent !== "leaktrace"}>
+        <LeakTrace active={agent === "leaktrace"} onSwitch={pick} />
       </div>
     </>
   );

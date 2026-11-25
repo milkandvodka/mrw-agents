@@ -1,11 +1,12 @@
 # mrw agents
 
-Two agents for a medical exam-prep team, on one site. The switch at the top moves between them:
+Three demos for a medical exam-prep team, on one site. The switch at the top moves between them:
 
 - **[QBank Auditor](qbank/README.md)** checks MCQs before students see them: questions you paste, or a demo bank of 13,758 real pharmacology questions. Every problem it finds goes to a review queue for faculty to confirm.
 - **[Mentor Desk](mentor/README.md)** answers mentors' questions about their students: app use, lectures, tests, weak subjects, batch rank and test integrity. The cohort is synthetic.
+- **LeakTrace** fights lecture piracy: every student's stream carries invisible marks unique to them, and a leaked copy (a Telegram forward, a screen recording, a phone filming a laptop) is traced back to the account it came from. It runs as its own service (classical signal processing, no AI); the tab shows it in a frame at the address in `LEAKTRACE_URL`. Its public demo has a synthetic sample lecture: watch it as a student, download their copy, and drop it into Trace.
 
-Both run on LangChain agents with deepseek on Ollama Cloud. They answer from tool results, never from guesses. This is an independent prototype on public and synthetic data.
+QBank Auditor and Mentor Desk run on LangChain agents with deepseek on Ollama Cloud. They answer from tool results, never from guesses. This is an independent prototype on public and synthetic data.
 
 ## Layout
 

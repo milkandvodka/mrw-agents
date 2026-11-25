@@ -95,3 +95,10 @@ def test_both_agents_answer_under_their_own_prefix():
 
 def test_an_unknown_student_is_a_404_not_the_page():
     assert client.get("/mentor/api/students/nobody").status_code == 404
+
+
+def test_config_hands_the_site_the_leaktrace_address_from_the_environment(monkeypatch):
+    monkeypatch.setenv("LEAKTRACE_URL", "https://leaktrace.example.com/")
+    assert client.get("/api/config").json() == {"leaktrace_url": "https://leaktrace.example.com"}
+    monkeypatch.delenv("LEAKTRACE_URL")
+    assert client.get("/api/config").json() == {"leaktrace_url": ""}  # not configured: the tab says so
